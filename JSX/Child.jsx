@@ -1,7 +1,35 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
-const Child = (props) => {
+const Child = (fromChild) => {
+  const dataContext = useContext(DescribeContext);
+
+  const sendDataToParent = () => {
+     
+    fromChild(document.getElementById("inputField").value);
+      
+  }
+
+
   return (
+    <>
+      <p>{dataContext}</p>
+      <input type="text" id='inputField' />
+      <button onClick={sendDataToParent}>Send</button>
+    </>
+    
+  );
+  /*
+    or:
+    <DescribeContext.Consumer>
+      (contextValue) => (
+        <p>{contextValue}</p>
+      )
+    </DescribeContext.Consumer>
+    <
+  */
+  /*
+    PROPS STRUCTURE:
+    return (
     <>
       
       {props.map((item, index) => {// Iterating over the props array using map
@@ -10,7 +38,7 @@ const Child = (props) => {
         return <Tag key={index} {...rest}>{item.content}</Tag>;
       })}
     </>
-  )
+  )*/
 }
 
 export default Child
