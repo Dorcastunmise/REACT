@@ -299,9 +299,17 @@ Purpose	                                    Specific tasks (e.g., parsing)	    A
     Iterates over an array and modify its elementa using a callback function.
 
 ## Transpiler vs Compiler
-    Transpiler is a tool used in converting a high-level programming language(JSX) into another high level PL (e.g JavaScript). While a Compiler is used to convert a high level PL(Babel) into a low level PL (e.g machine code/bytecode).
+    A compiler translates high-level source code into low-level machine code or bytecode for direct execution, while a transpiler (source-to-source compiler) translates high-level code into another high-level language, usually at a similar level of abstraction. Compilers focus on optimization for machines, whereas transpilers focus on compatibility between languages. 
+    
+Key Differences:
+Output Level: Compilers produce machine code/bytecode. Transpilers produce human-readable source code.
+Abstraction: Compilers lower the abstraction level. Transpilers maintain a similar level of abstraction.
+Purpose: Compilers enable software to run directly on hardware. Transpilers enable modern code to run in environments that do not support it (e.g., Typescript to JavaScript).
+Examples: GCC, javac (Compilers); Babel, TypeScript (tsc) (Transpilers). 
+Key Similarities:
+Both are tools that read source code, analyze it, and output different code without executing it, according to DEV Community. Technically, a transpiler is a specific type of compiler. 
 
-<b>Note: </b> It is possible to use JSX without React by creating one's own transpiler like Babel. Bit, it is not recommended since JSX is tightly integrated with React and relies on many React-specific features.
+<b>Note: </b> It is possible to use JSX without React by creating one's own transpiler like Babel. But, it is not recommended since JSX is tightly integrated with React and relies on many React-specific features.
 
 ## Routing
     This allows creation of an SPA with full navigation without a full-page refresh. React uses React Router library to handle routing and enables navigation and  rendering of different components based on the URL.
